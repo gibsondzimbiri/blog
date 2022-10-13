@@ -10,7 +10,7 @@
 @vite('resources/css/app.css')
 
 <body style="font-family: Open Sans, sans-serif">
-<section class="px-0 py-8 pt-0">
+<section class="px-0 py-8 pt-0 border border-gray-600">
     <nav class="md:flex md:justify-between md:items-center bg-gradient-to-b from-blue-800 to-blue-300 pt-5 pb-5 px-4">
         <div class="font-bold text-lg text-white">
             <a href="/">
@@ -75,6 +75,7 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li><a href="/" class="text-xs font-bold">Home</a></li>
+                    <li><a href="/about" class="text-xs font-bold">About</a></li>
                 </ul>
             </div>
 
@@ -85,7 +86,6 @@
     </nav>
 
     @if(session()->has('success'))
-
         <div x-data="{ show: true }"
              x-init="setTimeout(() => show=false, 5000);"
              x-show="show"
@@ -95,14 +95,11 @@
         </div>
     @endif
 
-
-
     {{ $slot }}
 
     <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16 sticky">
         <h5 class="text-xl">Stay in touch with the latest news</h5>
         <div class="relative inline-block mx-auto lg:bg-white-500 rounded-full border border-gray-600">
-
             <form method="POST" action="/newsletter" class="lg:flex text-sm bg-white rounded-full"
                   id="mailchip-subscribe">
                 @csrf
@@ -114,14 +111,9 @@
                         <input id="email" type="text"
                                name="email"
                                placeholder="Enter email address"
-                               class="rounded-full py-4 text-center text-base text-black">
-                        @error('email')
-                        <span class="text-red-500 text-xs display:block">{{ $message }}</span>
-                        @enderror
+                               class="rounded-full py-2 text-center outline-1 outline-gray-300">
                     </div>
-
                 </div>
-
                 <button type="submit"
                         class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 lg:mt-0 lg:ml-3 rounded-3xl text-xs font-semibold text-white uppercase py-3 px-3"
                 >
@@ -129,6 +121,9 @@
                 </button>
             </form>
         </div>
+        @error('email')
+        <p class="text-red-500 text-xs">{{ $message }}</p>
+        @enderror
     </footer>
 </section>
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>

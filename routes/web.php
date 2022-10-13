@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('about', [PostController::class, 'about']);
 
 Route::middleware('auth')->group(function() {
     Route::get('admin/posts/create', [PostController::class, 'create']);

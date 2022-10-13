@@ -1,9 +1,11 @@
 @props(['heading'])
 <section class="py-6 max-w-4xl mx-auto">
-    <h2 class="font-semibold text-lg mb-5 mt-8">{{ $heading }}</h2>
+    <h2 class="font-semibold text-lg mb-5 mt-8 bg-gradient-to-b from-gray-500 to-gray-100 py-4 px-4 rounded">{{ $heading }}</h2>
 
     <div class="flex flex-wrap">
      <aside class="w-1/4 bg-gray-200 rounded">
+
+
          <ul class="py-3 px-1">
              <li>
                  <x-button-setting><a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All posts</a>

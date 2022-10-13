@@ -80,7 +80,6 @@ class RegisterController extends Controller
 
     public function changePasswordPost(Request $request)
     {
-
         # Validation
         $attributes = request()->validate([
             'current_password' => 'required',
@@ -130,5 +129,4 @@ class RegisterController extends Controller
 
         return redirect()->back()->with("success", "Password successfully changed!");
     }
-
 }

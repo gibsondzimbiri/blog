@@ -13,15 +13,13 @@
             <x-form.textarea name="excerpt">{{ old('excerpt', $posts->excerpt) }}</x-form.textarea>
             <x-form.textarea name="body">{{ old('body', $posts->body) }}</x-form.textarea>
             <x-form.label name="Category"/>
-            <select name="status" id="status">
+            <x-form.select name="category_id" id="category-id"/>
+            <x-form.label name="Satus"/>
+            <select name="status" id="status" class="mb-6">
                 <option value="{{ $posts->status }}">{{ ucwords($posts->status) }}</option>
                 <option value="published">Publish</option>
                 <option value="unpublished">Unpublish</option>
             </select>
-
-            <x-form.select name="category_id" id="category-id"/>
-
-
             <x-form.checkbox name="user_id"/>
             <x-form.button>Update</x-form.button>
         </form>
