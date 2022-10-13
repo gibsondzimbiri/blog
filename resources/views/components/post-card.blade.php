@@ -6,7 +6,7 @@
             <img src="{{ asset('storage/app/' . $post->thumbnail) }}" alt="Blog Post illustration" class="rounded-xl">
         </div>
 
-        <div class="mt-8 flex flex-col justify-between">
+        <div class="mt-8 mb-5 flex flex-col justify-between bg-gray-200 p-6 ">
             <header>
                 <div class="space-x-2 w-75">
                     <x-category-button :category="$post->category"/>

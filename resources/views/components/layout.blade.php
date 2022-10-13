@@ -10,7 +10,7 @@
 @vite('resources/css/app.css')
 
 <body style="font-family: Open Sans, sans-serif">
-<section class="px-0 py-8 pt-0 border border-gray-600">
+<section class="flex flex-col h-screen px-0 pt-0 border border-gray-600">
     <nav class="md:flex md:justify-between md:items-center bg-gradient-to-b from-blue-800 to-blue-300 pt-5 pb-5 px-4">
         <div class="font-bold text-lg text-white">
             <a href="/">
@@ -59,7 +59,7 @@
 
     </nav>
 
-    <nav class="flex md:justify-between md:items-center mt-0 px-5 border border-b-black sticky top-0 z-0 bg-white">
+    <nav class="flex md:justify-between md:items-center mt-0 px-5 border border-b-black sticky top-0 z-0 bg-blue-200">
         <div class="pl-20 flex">
             <button data-collapse-toggle="navbar-default" type="button"
                     class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -73,7 +73,7 @@
                 </svg>
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-blue-200 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li><a href="/" class="text-xs font-bold">Home</a></li>
                     <li><a href="/about" class="text-xs font-bold">About</a></li>
                 </ul>
@@ -97,7 +97,7 @@
 
     {{ $slot }}
 
-    <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16 sticky">
+    <footer class="bg-gray-100 border border-black border-opacity-5 text-center py-10 px-10 mt-16 bottom-0">
         <h5 class="text-xl">Stay in touch with the latest news</h5>
         <div class="relative inline-block mx-auto lg:bg-white-500 rounded-full border border-gray-600">
             <form method="POST" action="/newsletter" class="lg:flex text-sm bg-white rounded-full"
